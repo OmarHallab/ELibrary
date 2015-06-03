@@ -1,4 +1,36 @@
-<p id="notice"><%= notice %></p>
+
+
+<div class="panel panel-default">
+  <div class="panel-body" >
+  	<div class="row">
+  		<div class="col-md-4" >
+  			<%= image_tag @article.image.url(:medium) %>
+  			<div class="table-responsive">
+  				<table class="table" >
+  					<tbody >
+  					  <tr>
+  						   <td><strong>Title:</strong></td>
+  						   <td><%= @article.title %></td>
+  					  </tr>
+  					  <tr>
+  					  	   <td><strong>Description:</strong></td>
+  						   <td><%= @article.online_location %></td>
+  					  </tr>
+  					  <tr>
+  					  	   <td><strong>Author name:</strong></td>
+  						   <td><%= @article.author_name %></td>
+  						   <%= link_to ' Edit ', edit_article_path(@article) %> |  <%= link_to ' Back ', articles_path %>
+  					  </tr>
+  					  </tr>
+  					</tbody>
+  				</table>
+  			</div>
+  		</div>
+  	</div>	
+  </div>
+</div>
+
+<!-- <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
@@ -14,6 +46,5 @@
   <strong>Author name:</strong>
   <%= @article.author_name %>
 </p>
+ -->
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
