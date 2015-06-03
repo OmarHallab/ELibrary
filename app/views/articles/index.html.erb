@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Articles</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Uploaded By</th>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Online location</th>
+      <th>Author name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= current_user.email %></td>
+        <!-- ^^ to see by which current user the article was uploaded by} -->
+        <td><%= image_tag article.image.url(:medium)%></td>
+        <td><%= article.title %></td>
+        <td><%= article.online_location %></td>
+        <td><%= article.author_name %></td>
+        <td><%= button_to 'Show', article %></td>
+        <td><%= button_to 'Edit', edit_article_path(article) %></td>
+        <td><%= button_to "delete", article, :method => :delete %></td>
+        <!-- for some reason the function below was taking me to "show" view, fixed it by replacing it with the upper fnction/ plus changed layout to button, cz we all like pressin stuff -->
+        <!-- <td><%#= button_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Article', new_article_path %>

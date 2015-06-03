@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @reading_list.user %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @reading_list.title %>
+</p>
+
+<p>
+  <strong>Articles:</strong>
+  <ul>
+    <% for article in @articles %>
+      <li><%= link_to article.title, article.online_location %></li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_reading_list_path(@reading_list) %> |
+<%= link_to 'Back', reading_lists_path %>
