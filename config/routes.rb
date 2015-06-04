@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reviews
+
   resources :online_articles
 
   devise_for :users

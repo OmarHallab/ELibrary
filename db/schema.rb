@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604200713) do
+ActiveRecord::Schema.define(version: 20150604214240) do
 
   create_table "article_reading_lists", force: :cascade do |t|
     t.integer  "article_id"
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 20150604200713) do
     t.string   "status_type"
   end
 
+  create_table "comment_articles", force: :cascade do |t|
+    t.integer  "rating"
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "online_articles", force: :cascade do |t|
     t.string   "Title"
     t.text     "Description"
@@ -56,6 +63,14 @@ ActiveRecord::Schema.define(version: 20150604200713) do
   end
 
   add_index "reading_lists", ["user_id"], name: "index_reading_lists_on_user_id"
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "rating"
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
