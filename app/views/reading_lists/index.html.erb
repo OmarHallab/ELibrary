@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Listing Reading Lists</h1>
 
@@ -17,7 +17,8 @@
         <td><%= reading_list.user %></td>
         <td><%= link_to reading_list.title, reading_list %></td>
         <td><%= link_to 'Edit', edit_reading_list_path(reading_list) %></td>
-        <td><%= link_to 'Destroy', reading_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <td><%= button_to 'Destroy',reading_list, method: :delete, :onclick => "return confirm('Are you sure you want to delete this post?')" %></td>
       </tr>
     <% end %>
   </tbody>

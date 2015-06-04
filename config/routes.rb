@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :online_articles
+
   devise_for :users
   resources :article_reading_lists
 
@@ -7,4 +9,5 @@ Rails.application.routes.draw do
   resources :articles
 
   root to: 'articles#index'
+  
 end

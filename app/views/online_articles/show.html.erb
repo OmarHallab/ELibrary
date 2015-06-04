@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @online_article.Title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @online_article.Description %>
+</p>
+
+<p>
+  <strong>Online path:</strong>
+  <%= @online_article.Online_path %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @online_article.Author %>
+</p>
+
+<%= link_to 'Edit', edit_online_article_path(@online_article) %> |
+<%= link_to 'Back', online_articles_path %>

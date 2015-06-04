@@ -10,24 +10,35 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+<div class="panel panel-default">
+  <div class="panel-body" >
+    <div class="row">
+      <div class="col-md-4" >
+            <div class="field">
+              <%= f.label :title %><br>
+              <%= f.text_field :title %>
+            </div>
+            <div class="field">
+              <%= f.label :Description %><br>
+              <%= f.text_field :online_location %>
+            </div>
+            <div class="field">
+              <%= f.label :author_name %><br>
+              <%= f.text_field :author_name %>
+            </div>
+            <div class="field">
+              <%= f.label :image %><br>
+              <%= f.file_field :image %><br>
+            </div>
+            <div>
+             <p><%= f.select(:status_type, options_for_select([['TO READ','TO READ'],['READ','READ']])) %><br>
+            </div>
+            <div class="actions">
+             <p> <%= f.submit %>
+            </div>
+      </div>
+    </div>  
   </div>
-  <div class="field">
-    <%= f.label :online_location %><br>
-    <%= f.text_field :online_location %>
-  </div>
-  <div class="field">
-    <%= f.label :author_name %><br>
-    <%= f.text_field :author_name %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+  
 <% end %>

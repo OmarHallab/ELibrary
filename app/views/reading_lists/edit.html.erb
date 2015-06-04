@@ -1,6 +1,8 @@
 <h1>Editing Reading List</h1>
 
 <%= render 'form' %>
+    <%= label_tag :article %><br>
+    <%= select_tag "reading_list[article]", options_from_collection_for_select(@articles, "id", "title") %>
 
 <%= link_to 'Show', @reading_list %> |
 <%= link_to 'Back', reading_lists_path %>
