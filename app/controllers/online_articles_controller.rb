@@ -1,6 +1,6 @@
 class OnlineArticlesController < ApplicationController
   before_action :set_online_article, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /online_articles
   # GET /online_articles.json
   def index

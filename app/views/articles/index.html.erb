@@ -9,7 +9,7 @@
 
 <div class="row">
    <% @articles.each do |article| %>
-
+    
     <div class="col - sn-6 col-md-3">
         <div class="thumbnail">
           <%= button_to 'Destroy',article, method: :delete, :onclick => "return confirm('Are you sure you want to delete this post?')" %>
