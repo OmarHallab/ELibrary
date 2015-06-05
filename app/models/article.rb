@@ -14,9 +14,10 @@ class Article < ActiveRecord::Base
   has_many :article_reading_lists
   has_many :reading_lists, through: :article_reading_lists
   belongs_to :user
+  has_many :reviews
 
 #code snippet to upload images
-  has_attached_file :image, styles: { medium: "300x400#"}
+  has_attached_file :image, styles: { medium: "300x400#"} , :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 end

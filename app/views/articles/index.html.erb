@@ -1,38 +1,23 @@
-<p id="notice"><%= notice %></p>
+<% if !user_signed_in? %>
+   <div class="jumbotron">
+    <h1>Check out our UOB blog</h1>
+    <p>Reviews, features, author interviews and article excerpts from the national daily and the Sunday book review. Registration required</p>
+    <p><%= link_to "Sign Up to Write a Review", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+   </div>
+<% end %>
 
-<h1>Listing Articles</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Uploaded By</th>
-      <th>Image</th>
-      <th>Title</th>
-      <th>Online location</th>
-      <th>Author name</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<div class="row">
+   <% @articles.each do |article| %>
+    
+    <div class="col - sn-6 col-md-3">
+        <div class="thumbnail">
+          <%= button_to 'Destroy',article, method: :delete, :onclick => "return confirm('Are you sure you want to delete this post?')" %>
+          <%= link_to (image_tag article.image.url(:medium), class: 'image'), article %>
+        </div>
+    </div>
+  <% end %>
+</div>
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= current_user.email %></td>
-        <!-- ^^ to see by which current user the article was uploaded by} -->
-        <td><%= image_tag article.image.url(:medium)%></td>
-        <td><%= article.title %></td>
-        <td><%= article.online_location %></td>
-        <td><%= article.author_name %></td>
-        <td><%= button_to 'Show', article %></td>
-        <td><%= button_to 'Edit', edit_article_path(article) %></td>
-        <td><%= button_to "delete", article, :method => :delete %></td>
-        <!-- for some reason the function below was taking me to "show" view, fixed it by replacing it with the upper fnction/ plus changed layout to button, cz we all like pressin stuff -->
-        <!-- <td><%#= button_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Article', new_article_path %>
+<%= link_to 'New Article', new_article_path , class: "btn btn-success"%>

@@ -16,6 +16,7 @@
  
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ 
 
 body {
     background-image: url("http://upload.wikimedia.org/wikipedia/en/thumb/8/85/University_of_Balamand_logo.svg/955px-University_of_Balamand_logo.svg.png");
@@ -23,3 +24,20 @@ body {
     background-attachment: fixed;
 }
 
+.review_title {
+	margin: 0 0 20px 0;
+}
+.reviews {
+	padding: 15 px 0;
+	border-bottom: 1px solid #EAEAEA;
+	.star-rating{
+	padding-bottom: 8px;
+	}
+
+.panel-body{
+
+background: #F5F5F5;
+
+}
+
+}

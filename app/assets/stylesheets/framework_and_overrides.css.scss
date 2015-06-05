@@ -2,11 +2,44 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-// make all images responsive by default
+body {
+    background-image: url("http://upload.wikimedia.org/wikipedia/en/thumb/8/85/University_of_Balamand_logo.svg/955px-University_of_Balamand_logo.svg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 img {
   @extend .img-responsive;
   margin: 0 auto;
+
   }
+  img1{
+  @extend .img-responsive;
+  width: 200%;
+  height: auto;
+  position: relative;
+  top:50px;
+  right:265px;
+  }
+
+  div.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+}
+
+  .thumbnail1{float: left;
+    width: 256px;
+    height: 256px;
+    margin: 75px;
+    margin-bottom:10px;
+    margin-right:100px;
+}
+
+
+
+  
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
@@ -31,16 +64,55 @@ img {
   @extend .btn-primary;
   @extend .btn-lg;
   }
-// apply styles to HTML elements
-// to make views framework-neutral
+
 main {
   @extend .container;
   background-color: #eee;
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
+
   }
-section {
-  @extend .row;
-  margin-top: 20px;
-  }
+
+h1{
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Helvetica;
+  color: #76d0ad;
+  text-align: center;
+  text-decoration: underline;
+  position:relative;
+  bottom:100px;
+}
+h2{
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Helvetica, sans serif;
+  color:#2F4F4F
+}
+h3{
+  font-size: 30px;
+  font-family: Times New Roman, sans serif;
+  color:#2F4F4F
+}
+btn1{
+  float:left;
+  margin-left:350px;
+  margin-right:80px;
+}
+btn2{
+  float:left;
+}
+
+
+ div.raspberry {
+    float: left;
+    margin: 2px;
+}
+
+div p {
+    text-align: center;
+    color:#2F4F4F;
+    font-size:16px;
+  
+}

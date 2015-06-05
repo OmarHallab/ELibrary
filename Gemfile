@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 ruby '2.2.2'
+
+gem 'searchkick', '~> 0.8.7' #gem for search
 gem 'paperclip', '~> 4.2.0' #gem file for uploading files and pictures
 gem 'devise', '~> 3.5.1'  #gem file for user authentication
 gem 'rails', '4.2.0'
