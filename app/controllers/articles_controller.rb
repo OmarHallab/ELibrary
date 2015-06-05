@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @reviews = Review.where(article_id: @article.id).order("created_at DESC")
   end
 
   def new

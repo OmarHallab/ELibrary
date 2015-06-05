@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :reviews
+  
 
   resources :online_articles
 
@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
   resources :reading_lists
 
-  resources :articles
-
+  	resources :articles do
+  		resources :reviews, except: [:show, :index]
+	end
   root to: 'articles#index'
   
 end
