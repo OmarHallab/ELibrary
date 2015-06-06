@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.2.1'
+# App should work with whatever ruby version is installed
+# ruby '2.2.2'
+
 gem 'paperclip', '~> 4.2.0' #gem file for uploading files and pictures
 gem 'devise', '~> 3.5.1'  #gem file for user authentication
 gem 'rails', '4.2.0'
@@ -10,6 +12,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem "httparty"
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
